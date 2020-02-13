@@ -55,17 +55,14 @@
 #####
 
 #Figure 4
-Bland.Altman(DF10$MANUALBCS_FB, DF10$MANUALBCS_JK,rep.meas = T,
-             subject = DF10$JUMBO,ylab="FB minus JK", 
-             xlab="Mean assessor score")
-mean(DF10$MANUALBCS_FB- DF10$MANUALBCS_JK)
-unique(DF2$JUMBO)
+Bland.Altman(DF1$MANUALBCS_FB, DF1$MANUALBCS_JK,rep.meas = T,
+             subject = DF1$JUMBO,ylab="FB minus JK", 
+             xlab="Mean assessor score", ylim=c(-0.7,0.4))
+mean(DF1$MANUALBCS_FB- DF1$MANUALBCS_JK)
+
 
 #Figure 5
-Bland.Altman(DF4$HumanMean, jitter(DF4$rtreePred,0.0,0.015),rep.meas = T,
-             subject = DF4$JUMBO,ylab="FB - JK mean minus BMF tree conversion", 
-             xlab="Mean of Human Mean and BMF scores")
-#Figure 6
-Bland.Altman(DF4$HumanMean, DF4$ModPred,rep.meas = T,
-             subject = DF4$JUMBO,ylab="FB - JK mean minus BMF linear conversion", 
-             xlab="Mean of Human Mean and BMF scores")
+Bland.Altman(DF4te$HumanMean, DF4te$ModPred,rep.meas = T,
+             subject = DF4te$JUMBO,ylab="Assessor mean minus BMF", 
+             xlab="Mean of Human Mean and BMF scores", ylim=c(-0.7,0.4))
+# side by side - same windows - can't use grid arrange as it base graphics

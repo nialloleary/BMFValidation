@@ -3,11 +3,12 @@
 #correlation of error
 
 # Need to compare same cows and same dates only to be a fair comparison?
-#DF40  starting df - all matching records
-table(DF40$Date) # why is it reporting 0 scores
+#DF4  starting df - all matching records
+table(DF4$Date) # why is it reporting 0 scores
 
-DFrep1<- DF40 %>% select(JUMBO,DATE,MANUALBCS_FB,MANUALBCS_JK,HumanMean)
-DFrep1$BMF<-(DF40$BCS.0.5*0.3991)+1.63434
+DFrep1<- DF4 %>% select(JUMBO,DATE,MANUALBCS_FB,MANUALBCS_JK,HumanMean)
+#Old equation
+DFrep1$BMF<-(DF4$BCS.0.5*0.3991)+1.63434
 # split by date
 DFa<- DFrep1 %>% filter (DATE=='12/04/2016' ) # 97
 DFb<- DFrep1 %>% filter (DATE=='10/05/2016' ) # 92
@@ -18,7 +19,7 @@ head(DFrep1)
 DFrep2<- inner_join(DFa, DFb, by="JUMBO")
 DFr<- inner_join(DFrep2, DFc, by="JUMBO") # 83
 
-shapiro.test(DFr$MANUALBCS_FB.x)
+shapiro.test(DFr$MANUALBCS_FB.x) #normality test
 shapiro.test(DFr$MANUALBCS_JK)
 hist(DFr$MANUALBCS_FB.x)
 shapiro.test(DFr$BMF.x) #- not normalizePath()

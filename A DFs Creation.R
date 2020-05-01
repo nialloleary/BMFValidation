@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #Data Frame creation For BMF validation paper
+=======
+#Data Frame creation For BMF paper
+>>>>>>> 6369685cb3f8a13d7fae6c77d3f067d33d2ad8c4
 
 library(readr);library(dplyr);
 #library(magrittr);
@@ -26,7 +30,11 @@ HumDF3<- Human[!is.na(Human$MANUALBCS_JK),] #All JK
 #DF2= FB and BMF match
 #DF3 = JK and BMF match
 #DF4 JK & FB match BMF
+<<<<<<< HEAD
 DF1<-HumDF3[!is.na(HumDF3$MANUALBCS_FB),] #FB-JK
+=======
+DF1<-HumDF3[!is.na(HumDF3$MANUALBCS_FB),] 
+>>>>>>> 6369685cb3f8a13d7fae6c77d3f067d33d2ad8c4
 DF2<- inner_join(HumDF2,BMF,by=c('JUMBO','Date')) #FB- BMF
 DF3<- inner_join(HumDF3,BMF,by=c('JUMBO','Date')) #JK - BMF
 DF4<- inner_join(DF1,BMF,by=c('JUMBO','Date'))

@@ -1,6 +1,4 @@
-
 #Reproducibility using calculations as described in McAlinden et al 2015
-DFrep1<- DF4 %>% select(JUMBO,DATE,MANUALBCS_FB,MANUALBCS_JK,HumanMean,ModPred)
 
 # split by date
 DFa<- DFrep1 %>% filter (DATE=='12/04/2016' ) # 97
